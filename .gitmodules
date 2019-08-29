@@ -1,0 +1,9 @@
+[submodule "Vendor/NSObjectSignals"]
+	path = Vendor/NSObjectSignals
+	url = https://github.com/CmST0us/NSObjectSignals
+[submodule "Vendor/KVOController"]
+	path = Vendor/KVOController
+	url = https://github.com/CmST0us/KVOController
+[submodule "Vendor/Masonry"]
+	path = Vendor/Masonry
+	url = https://github.com/CmST0us/Masonry
