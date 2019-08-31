@@ -17,6 +17,10 @@
 		4F9725CE231825CF00272F45 /* Masonry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9725C9231825CF00272F45 /* Masonry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F9725CF231825CF00272F45 /* NSObjectSignals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9725CA231825CF00272F45 /* NSObjectSignals.framework */; };
 		4F9725D0231825CF00272F45 /* NSObjectSignals.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9725CA231825CF00272F45 /* NSObjectSignals.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4FDD12DE231AB3F700147E60 /* MMRenderTriangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12DD231AB3F700147E60 /* MMRenderTriangleViewController.m */; };
+		4FDD12E1231AB44300147E60 /* MMRenderTriangleRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12E0231AB44300147E60 /* MMRenderTriangleRender.m */; };
+		4FDD12E4231AB46800147E60 /* MMMetalRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12E3231AB46800147E60 /* MMMetalRender.m */; };
+		4FDD12E6231AC3DE00147E60 /* render_triangle.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12E5231AC3DE00147E60 /* render_triangle.metal */; };
 		4FFBD22923182A1400B3EB0A /* MMRoadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD22823182A1400B3EB0A /* MMRoadTableViewController.m */; };
 		4FFBD22C23182A5800B3EB0A /* MMRoadTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD22B23182A5800B3EB0A /* MMRoadTableViewDataSource.m */; };
 		4FFBD22F23182B5700B3EB0A /* MMStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD22E23182B5700B3EB0A /* MMStepViewController.m */; };
@@ -50,6 +54,13 @@
 		4F9725C8231825CF00272F45 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9725C9231825CF00272F45 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9725CA231825CF00272F45 /* NSObjectSignals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NSObjectSignals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FDD12DC231AB3F700147E60 /* MMRenderTriangleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMRenderTriangleViewController.h; sourceTree = "<group>"; };
+		4FDD12DD231AB3F700147E60 /* MMRenderTriangleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMRenderTriangleViewController.m; sourceTree = "<group>"; };
+		4FDD12DF231AB44300147E60 /* MMRenderTriangleRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMRenderTriangleRender.h; sourceTree = "<group>"; };
+		4FDD12E0231AB44300147E60 /* MMRenderTriangleRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMRenderTriangleRender.m; sourceTree = "<group>"; };
+		4FDD12E2231AB46800147E60 /* MMMetalRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMMetalRender.h; sourceTree = "<group>"; };
+		4FDD12E3231AB46800147E60 /* MMMetalRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMMetalRender.m; sourceTree = "<group>"; };
+		4FDD12E5231AC3DE00147E60 /* render_triangle.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = render_triangle.metal; sourceTree = "<group>"; };
 		4FFBD22723182A1400B3EB0A /* MMRoadTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMRoadTableViewController.h; sourceTree = "<group>"; };
 		4FFBD22823182A1400B3EB0A /* MMRoadTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMRoadTableViewController.m; sourceTree = "<group>"; };
 		4FFBD22A23182A5800B3EB0A /* MMRoadTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMRoadTableViewDataSource.h; sourceTree = "<group>"; };
@@ -117,6 +128,7 @@
 		4F9725D3231825EA00272F45 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4FDD12DB231AB3BD00147E60 /* Step2 */,
 				4F9725D42318260A00272F45 /* Step1 */,
 				4FFBD22723182A1400B3EB0A /* MMRoadTableViewController.h */,
 				4FFBD22823182A1400B3EB0A /* MMRoadTableViewController.m */,
@@ -124,6 +136,8 @@
 				4FFBD22B23182A5800B3EB0A /* MMRoadTableViewDataSource.m */,
 				4FFBD22D23182B5700B3EB0A /* MMStepViewController.h */,
 				4FFBD22E23182B5700B3EB0A /* MMStepViewController.m */,
+				4FDD12E2231AB46800147E60 /* MMMetalRender.h */,
+				4FDD12E3231AB46800147E60 /* MMMetalRender.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -135,6 +149,18 @@
 				4FFBD23123182D5D00B3EB0A /* MMMetalFirstStepViewController.m */,
 			);
 			path = Step1;
+			sourceTree = "<group>";
+		};
+		4FDD12DB231AB3BD00147E60 /* Step2 */ = {
+			isa = PBXGroup;
+			children = (
+				4FDD12E5231AC3DE00147E60 /* render_triangle.metal */,
+				4FDD12DF231AB44300147E60 /* MMRenderTriangleRender.h */,
+				4FDD12E0231AB44300147E60 /* MMRenderTriangleRender.m */,
+				4FDD12DC231AB3F700147E60 /* MMRenderTriangleViewController.h */,
+				4FDD12DD231AB3F700147E60 /* MMRenderTriangleViewController.m */,
+			);
+			path = Step2;
 			sourceTree = "<group>";
 		};
 		4FFBD2332318302400B3EB0A /* Resources */ = {
@@ -218,8 +244,12 @@
 			files = (
 				4FFBD22C23182A5800B3EB0A /* MMRoadTableViewDataSource.m in Sources */,
 				4F9725B0231823A700272F45 /* AppDelegate.m in Sources */,
+				4FDD12E4231AB46800147E60 /* MMMetalRender.m in Sources */,
+				4FDD12E6231AC3DE00147E60 /* render_triangle.metal in Sources */,
 				4F9725C1231823A900272F45 /* main.m in Sources */,
+				4FDD12E1231AB44300147E60 /* MMRenderTriangleRender.m in Sources */,
 				4FFBD22F23182B5700B3EB0A /* MMStepViewController.m in Sources */,
+				4FDD12DE231AB3F700147E60 /* MMRenderTriangleViewController.m in Sources */,
 				4FFBD23223182D5D00B3EB0A /* MMMetalFirstStepViewController.m in Sources */,
 				4FFBD22923182A1400B3EB0A /* MMRoadTableViewController.m in Sources */,
 			);
