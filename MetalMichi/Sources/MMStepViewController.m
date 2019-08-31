@@ -8,7 +8,7 @@
 
 #import <Masonry/Masonry.h>
 #import "MMStepViewController.h"
-
+#import "MMMetalRender.h"
 @interface MMStepViewController ()
 @property (nonatomic, strong) UIButton *exitButton;
 @end
@@ -51,8 +51,8 @@
     
     [self.view addSubview:self.exitButton];
     [self.exitButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(20);
-        make.top.mas_equalTo(44);
+        make.left.equalTo(self.view).offset(20);
+        make.top.equalTo(self.view).offset(44);
         make.width.mas_equalTo(100);
         make.height.mas_equalTo(50);
     }];
@@ -65,6 +65,10 @@
 
 - (void)handleExitButtonPress:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (Class)renderClass {
+    return [MMMetalRender class];
 }
 
 @end

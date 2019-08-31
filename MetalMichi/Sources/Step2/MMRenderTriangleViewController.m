@@ -11,7 +11,7 @@
 #import "MMRenderTriangleViewController.h"
 #import "MMRenderTriangleRender.h"
 @interface MMRenderTriangleViewController ()
-@property (nonatomic, strong) MMRenderTriangleRender *render;
+@property (nonatomic, strong) MMMetalRender *render;
 @property (nonatomic, strong) MTKView *mtkView;
 @end
 
@@ -27,10 +27,10 @@
     return _mtkView;
 }
 
-- (MMRenderTriangleRender *)render {
+- (MMMetalRender *)render {
     if (_render == nil) {
         NSError *error = nil;
-        _render = [[MMRenderTriangleRender alloc] initWithMetalView:self.mtkView error:&error];
+        _render = [[[self renderClass] alloc] initWithMetalView:self.mtkView error:&error];
         if (_render == nil ||
             error != nil) {
             if (error.code == MMMetalRenderErrorCodeUnsupport) {
@@ -71,5 +71,8 @@
     [super viewDidLoad];
 }
 
+- (Class)renderClass {
+    return [MMRenderTriangleRender class];
+}
 
 @end

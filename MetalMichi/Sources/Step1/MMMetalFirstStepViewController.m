@@ -58,7 +58,7 @@
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
     [self.view addSubview:self.mtkView];
-    [self setupConstraints];
+    self.mtkView.frame = self.view.bounds;
     
     [super viewDidLoad];
 }

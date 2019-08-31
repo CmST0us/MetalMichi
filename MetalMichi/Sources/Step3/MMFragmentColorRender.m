@@ -44,7 +44,7 @@
         }
     };
     
-    NSUInteger colorVertexSize = sizeof(struct ColorVertex) * sizeof(colorVertex);
+    NSUInteger colorVertexSize = sizeof(colorVertex);
     
     id<MTLBuffer> colorVertexBuffer = [self.device newBufferWithBytes:&colorVertex length:colorVertexSize options:MTLResourceOptionCPUCacheModeDefault];
     self.colorVertexBuffer = colorVertexBuffer;

@@ -18,6 +18,7 @@
         @{@"显示一个Metal视图":@"MMMetalFirstStepViewController"},
         @{@"渲染一个三角形": @"MMRenderTriangleViewController"},
         @{@"使用片元着色器差值渲染一个彩色三角形": @"MMFragmentColorViewController"},
+        @{@"使用向顶点着色器传递变化矩阵": @"MMTransformViewController"},
     ];
     
     return roadClass;

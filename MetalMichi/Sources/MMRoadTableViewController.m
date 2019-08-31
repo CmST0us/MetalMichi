@@ -42,7 +42,6 @@ static NSString * const MMRoadTableViewCellId = @"cell";
 
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 #pragma mark - Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

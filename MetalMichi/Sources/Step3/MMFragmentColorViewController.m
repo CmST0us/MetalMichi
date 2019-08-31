@@ -11,7 +11,7 @@
 #import "MMFragmentColorViewController.h"
 
 @interface MMFragmentColorViewController ()
-@property (nonatomic, strong) MMFragmentColorRender *render;
+@property (nonatomic, strong) MMMetalRender *render;
 @property (nonatomic, strong) MTKView *mtkView;
 @end
 
@@ -27,10 +27,10 @@
     return _mtkView;
 }
 
-- (MMFragmentColorRender *)render {
+- (MMMetalRender *)render {
     if (_render == nil) {
         NSError *error = nil;
-        _render = [[MMFragmentColorRender alloc] initWithMetalView:self.mtkView error:&error];
+        _render = [[[self renderClass] alloc] initWithMetalView:self.mtkView error:&error];
         if (_render == nil ||
             error != nil) {
             if (error.code == MMMetalRenderErrorCodeUnsupport) {
@@ -66,6 +66,10 @@
         make.edges.equalTo(self.view);
     }];
     [super viewDidLoad];
+}
+
+- (Class)renderClass {
+    return [MMFragmentColorRender class];
 }
 
 @end
