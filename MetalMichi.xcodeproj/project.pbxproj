@@ -21,6 +21,9 @@
 		4FDD12E1231AB44300147E60 /* MMRenderTriangleRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12E0231AB44300147E60 /* MMRenderTriangleRender.m */; };
 		4FDD12E4231AB46800147E60 /* MMMetalRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12E3231AB46800147E60 /* MMMetalRender.m */; };
 		4FDD12E6231AC3DE00147E60 /* render_triangle.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12E5231AC3DE00147E60 /* render_triangle.metal */; };
+		4FDD12EA231AC87600147E60 /* MMFragmentColorRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12E9231AC87600147E60 /* MMFragmentColorRender.m */; };
+		4FDD12ED231AC88F00147E60 /* MMFragmentColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12EC231AC88F00147E60 /* MMFragmentColorViewController.m */; };
+		4FDD12F0231ACCB400147E60 /* color_fragment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12EF231ACCB400147E60 /* color_fragment.metal */; };
 		4FFBD22923182A1400B3EB0A /* MMRoadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD22823182A1400B3EB0A /* MMRoadTableViewController.m */; };
 		4FFBD22C23182A5800B3EB0A /* MMRoadTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD22B23182A5800B3EB0A /* MMRoadTableViewDataSource.m */; };
 		4FFBD22F23182B5700B3EB0A /* MMStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD22E23182B5700B3EB0A /* MMStepViewController.m */; };
@@ -61,6 +64,12 @@
 		4FDD12E2231AB46800147E60 /* MMMetalRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMMetalRender.h; sourceTree = "<group>"; };
 		4FDD12E3231AB46800147E60 /* MMMetalRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMMetalRender.m; sourceTree = "<group>"; };
 		4FDD12E5231AC3DE00147E60 /* render_triangle.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = render_triangle.metal; sourceTree = "<group>"; };
+		4FDD12E8231AC87600147E60 /* MMFragmentColorRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMFragmentColorRender.h; sourceTree = "<group>"; };
+		4FDD12E9231AC87600147E60 /* MMFragmentColorRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMFragmentColorRender.m; sourceTree = "<group>"; };
+		4FDD12EB231AC88F00147E60 /* MMFragmentColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMFragmentColorViewController.h; sourceTree = "<group>"; };
+		4FDD12EC231AC88F00147E60 /* MMFragmentColorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMFragmentColorViewController.m; sourceTree = "<group>"; };
+		4FDD12EE231AC98200147E60 /* ColorVertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorVertex.h; sourceTree = "<group>"; };
+		4FDD12EF231ACCB400147E60 /* color_fragment.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = color_fragment.metal; sourceTree = "<group>"; };
 		4FFBD22723182A1400B3EB0A /* MMRoadTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMRoadTableViewController.h; sourceTree = "<group>"; };
 		4FFBD22823182A1400B3EB0A /* MMRoadTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMRoadTableViewController.m; sourceTree = "<group>"; };
 		4FFBD22A23182A5800B3EB0A /* MMRoadTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMRoadTableViewDataSource.h; sourceTree = "<group>"; };
@@ -128,6 +137,7 @@
 		4F9725D3231825EA00272F45 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4FDD12E7231AC80500147E60 /* Step3 */,
 				4FDD12DB231AB3BD00147E60 /* Step2 */,
 				4F9725D42318260A00272F45 /* Step1 */,
 				4FFBD22723182A1400B3EB0A /* MMRoadTableViewController.h */,
@@ -161,6 +171,19 @@
 				4FDD12DD231AB3F700147E60 /* MMRenderTriangleViewController.m */,
 			);
 			path = Step2;
+			sourceTree = "<group>";
+		};
+		4FDD12E7231AC80500147E60 /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				4FDD12EF231ACCB400147E60 /* color_fragment.metal */,
+				4FDD12EE231AC98200147E60 /* ColorVertex.h */,
+				4FDD12E8231AC87600147E60 /* MMFragmentColorRender.h */,
+				4FDD12E9231AC87600147E60 /* MMFragmentColorRender.m */,
+				4FDD12EB231AC88F00147E60 /* MMFragmentColorViewController.h */,
+				4FDD12EC231AC88F00147E60 /* MMFragmentColorViewController.m */,
+			);
+			path = Step3;
 			sourceTree = "<group>";
 		};
 		4FFBD2332318302400B3EB0A /* Resources */ = {
@@ -250,7 +273,10 @@
 				4FDD12E1231AB44300147E60 /* MMRenderTriangleRender.m in Sources */,
 				4FFBD22F23182B5700B3EB0A /* MMStepViewController.m in Sources */,
 				4FDD12DE231AB3F700147E60 /* MMRenderTriangleViewController.m in Sources */,
+				4FDD12EA231AC87600147E60 /* MMFragmentColorRender.m in Sources */,
 				4FFBD23223182D5D00B3EB0A /* MMMetalFirstStepViewController.m in Sources */,
+				4FDD12ED231AC88F00147E60 /* MMFragmentColorViewController.m in Sources */,
+				4FDD12F0231ACCB400147E60 /* color_fragment.metal in Sources */,
 				4FFBD22923182A1400B3EB0A /* MMRoadTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,21 +1,21 @@
 //
-//  MMRenderTriangleViewController.m
+//  MMFragmentColorViewController.m
 //  MetalMichi
 //
 //  Created by CmST0us on 2019/8/31.
 //  Copyright © 2019 eric3u. All rights reserved.
 //
 
-#import <MetalKit/MetalKit.h>
 #import <Masonry/Masonry.h>
-#import "MMRenderTriangleViewController.h"
-#import "MMRenderTriangleRender.h"
-@interface MMRenderTriangleViewController ()
-@property (nonatomic, strong) MMRenderTriangleRender *render;
+#import "MMFragmentColorRender.h"
+#import "MMFragmentColorViewController.h"
+
+@interface MMFragmentColorViewController ()
+@property (nonatomic, strong) MMFragmentColorRender *render;
 @property (nonatomic, strong) MTKView *mtkView;
 @end
 
-@implementation MMRenderTriangleViewController
+@implementation MMFragmentColorViewController
 
 #pragma mark - Init
 
@@ -27,10 +27,10 @@
     return _mtkView;
 }
 
-- (MMRenderTriangleRender *)render {
+- (MMFragmentColorRender *)render {
     if (_render == nil) {
         NSError *error = nil;
-        _render = [[MMRenderTriangleRender alloc] initWithMetalView:self.mtkView error:&error];
+        _render = [[MMFragmentColorRender alloc] initWithMetalView:self.mtkView error:&error];
         if (_render == nil ||
             error != nil) {
             if (error.code == MMMetalRenderErrorCodeUnsupport) {
@@ -54,22 +54,18 @@
 
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
-    [self.view addSubview:self.mtkView];
     
     if (self.render == nil) {
         NSLog(@"Init render failed");
-        return;
     }
-    
     [self.render createResource];
     [self.render createRenderPipelines];
     
+    [self.view addSubview:self.mtkView];
     [self.mtkView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    
     [super viewDidLoad];
 }
-
 
 @end

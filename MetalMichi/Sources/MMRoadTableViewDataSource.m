@@ -17,6 +17,7 @@
     roadClass = @[
         @{@"显示一个Metal视图":@"MMMetalFirstStepViewController"},
         @{@"渲染一个三角形": @"MMRenderTriangleViewController"},
+        @{@"使用片元着色器差值渲染一个彩色三角形": @"MMFragmentColorViewController"},
     ];
     
     return roadClass;

@@ -30,14 +30,14 @@
 
  */
 
+@interface MMRenderTriangleRender ()
+@property (nonatomic, strong) id<MTLBuffer> triangleVertexBuffer;
+@property (nonatomic, strong) id<MTLRenderPipelineState> renderPipelineState;
+@end
 
 @implementation MMRenderTriangleRender
 
-
-- (void)drawInRenderView {
-    MTLRenderPassDescriptor *descriptor = [self.renderView currentRenderPassDescriptor];
-    descriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 0.5, 0.5, 1);
-
+- (void)createResource {
     float vertexData[] = {
         /* x    y    z    w */
         -1.0, -1.0, 0.0, 1.0,
@@ -48,7 +48,11 @@
     
     /// Create Data Buffer
     id<MTLBuffer> dataBuffer = [self.device newBufferWithBytes:&vertexData length:vertexDataSize options:MTLResourceOptionCPUCacheModeDefault];
+    self.triangleVertexBuffer = dataBuffer;
     
+}
+
+- (void)createRenderPipelines {
     /// Create Metal Library
     id<MTLLibrary> library = [self.device newDefaultLibrary];
     id<MTLFunction> vertexFunction = [library newFunctionWithName:@"vertex_function"];
@@ -59,27 +63,29 @@
     renderPipelineDescriptor.vertexFunction = vertexFunction;
     renderPipelineDescriptor.fragmentFunction = fragmentFunction;
     renderPipelineDescriptor.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm;
-    
     NSError *error;
     id<MTLRenderPipelineState> renderPipelineState = [self.device newRenderPipelineStateWithDescriptor:renderPipelineDescriptor error:&error];
     if (error) {
         NSLog(@"create render pipeline state error: %@", error);
         return;
     }
+    self.renderPipelineState = renderPipelineState;
+}
+
+- (void)drawInRenderView {
+    MTLRenderPassDescriptor *descriptor = [self.renderView currentRenderPassDescriptor];
+    descriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 0.5, 0.5, 1);
     
-    id<MTLCommandQueue> commandQueue = [self.device newCommandQueue];
-    id<MTLCommandBuffer> commandBuffer = [commandQueue commandBuffer];
+    id<MTLCommandBuffer> commandBuffer = self.commandQueue.commandBuffer;
     id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:descriptor];
-    [renderEncoder setRenderPipelineState:renderPipelineState];
-    [renderEncoder setVertexBuffer:dataBuffer offset:0 atIndex:0];
-    
+    [renderEncoder setRenderPipelineState:self.renderPipelineState];
+    [renderEncoder setVertexBuffer:self.triangleVertexBuffer offset:0 atIndex:0];
+
     /// 顶点数据放入renderEncoder中, 配置为三角形顶点
     [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle vertexStart:0 vertexCount:3];
-    
     [renderEncoder endEncoding];
     [commandBuffer presentDrawable:self.renderView.currentDrawable];
     [commandBuffer commit];
-    
 }
 
 - (void)drawableSizeWillChange:(CGSize)size {

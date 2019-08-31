@@ -41,6 +41,13 @@ NSString * const MMMetalRenderErrorDomain = @"MMMetalRenderErrorDomain";
     return self;
 }
 
+- (id<MTLCommandQueue>)commandQueue {
+    if (_commandQueue == nil) {
+        _commandQueue = [self.device newCommandQueue];
+    }
+    return _commandQueue;
+}
+
 #pragma mark - Subclass Override
 - (void)drawableSizeWillChange:(CGSize)size {
     

@@ -20,6 +20,7 @@ typedef NS_ENUM(NSInteger, MMMetalRenderErrorCode) {
 @property (nonatomic, nullable, weak) id<MTKViewDelegate> delegate;
 @property (nonatomic, readonly) MTKView *renderView;
 @property (nonatomic, nullable, readonly) id<MTLDevice> device;
+@property (nonatomic, strong) id<MTLCommandQueue> commandQueue;
 
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -29,6 +30,10 @@ typedef NS_ENUM(NSInteger, MMMetalRenderErrorCode) {
 
 - (nullable instancetype)initWithMetalView:(MTKView *)mtkView
                             error:(NSError * _Nullable *)error;
+
+// Init Step
+- (void)createResource;
+- (void)createRenderPipelines;
 
 #pragma mark - Subclass Override
 - (void)drawableSizeWillChange:(CGSize)size;
