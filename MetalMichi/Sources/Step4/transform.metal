@@ -27,13 +27,13 @@ struct MetalTransformVertex {
 
 vertex MetalTransformVertex
 transform_vertex_function(constant TransformVertex *transform_vertex [[buffer(0)]],
-                          constant TransformMatrix *transform_matrix [[buffer(1)]],
+                          constant matrix_float4x4 &transform_matrix [[buffer(1)]],
                           uint vid [[vertex_id]]) {
-    TransformMatrix transform = transform_matrix[vid];
+    matrix_float4x4 transform = transform_matrix;
     MetalTransformVertex in_vertex;
     in_vertex.position = transform_vertex[vid].position;
     in_vertex.color = transform_vertex[vid].color;
-//    in_vertex.position = transform.m * in_vertex.position;
+    in_vertex.position = transform * in_vertex.position;
     return in_vertex;
 }
 

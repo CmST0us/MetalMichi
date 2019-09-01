@@ -63,7 +63,9 @@
     
     [self.view addSubview:self.mtkView];
     [self.mtkView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.centerX.centerY.equalTo(self.view);
+        make.width.mas_equalTo(300);
+        make.height.mas_equalTo(300 * sin(M_PI / 180 * 60));
     }];
     [super viewDidLoad];
 }
