@@ -25,8 +25,13 @@ typedef NS_ENUM(NSInteger, MMMetalRenderErrorCode) {
 - (instancetype)init NS_UNAVAILABLE;
 
 - (instancetype)initWithMetalView:(MTKView *)mtkView
+                           device:(id<MTLDevice>)device
                          delegate:(nullable id<MTKViewDelegate>)delegate
                             error:(NSError * _Nullable __autoreleasing * _Nullable)error NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)initWithMetalView:(MTKView *)mtkView
+                         delegate:(nullable id<MTKViewDelegate>)delegate
+                            error:(NSError * _Nullable __autoreleasing * _Nullable)error;
 
 - (nullable instancetype)initWithMetalView:(MTKView *)mtkView
                             error:(NSError * _Nullable *)error;

@@ -26,13 +26,23 @@ NSString * const MMMetalRenderErrorDomain = @"MMMetalRenderErrorDomain";
 - (instancetype)initWithMetalView:(MTKView *)mtkView
                          delegate:(id<MTKViewDelegate>)delegate
                             error:(NSError * _Nullable __autoreleasing * _Nullable)error{
+    if (mtkView.device == nil) {
+         mtkView.device = MTLCreateSystemDefaultDevice();
+    }
+    return [self initWithMetalView:mtkView device:mtkView.device delegate:delegate error:error];
+}
+
+- (instancetype)initWithMetalView:(MTKView *)mtkView
+                           device:(id<MTLDevice>)device
+                         delegate:(id<MTKViewDelegate>)delegate
+                            error:(NSError * _Nullable __autoreleasing *)error {
     self = [super init];
     if (self) {
-        _device = MTLCreateSystemDefaultDevice();
-        if (_device == nil) {
+        if (device == nil) {
             *error = [NSError errorWithDomain:MMMetalRenderErrorDomain code:MMMetalRenderErrorCodeUnsupport userInfo:nil];
             return nil;
         }
+        _device = device;
         _renderView = mtkView;
         _renderView.device = _device;
         _delegate = delegate;
