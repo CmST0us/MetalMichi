@@ -62,7 +62,7 @@
     }
     
     [self.render createResource];
-    [self.render createRenderPipelines];
+    [self.render createPipelines];
     
     [self.mtkView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);

@@ -52,7 +52,7 @@
     
 }
 
-- (void)createRenderPipelines {
+- (void)createPipelines {
     /// Create Metal Library
     id<MTLLibrary> library = [self.device newDefaultLibrary];
     id<MTLFunction> vertexFunction = [library newFunctionWithName:@"vertex_function"];

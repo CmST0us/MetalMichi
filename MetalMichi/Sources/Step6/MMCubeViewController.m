@@ -1,5 +1,5 @@
 //
-//  MMFractalViewController.m
+//  MMCubeViewController.m
 //  MetalMichi
 //
 //  Created by CmST0us on 2019/9/1.
@@ -7,22 +7,23 @@
 //
 
 #import <Masonry/Masonry.h>
-#import "MMFractalViewController.h"
-#import "MMFractalRender.h"
-@interface MMFractalViewController ()
-@property (nonatomic, strong) MMFractalRender *render;
+#import "MMCubeRender.h"
+#import "MMCubeViewController.h"
+
+@interface MMCubeViewController ()
+@property (nonatomic, strong) MMCubeRender *render;
 @property (nonatomic, strong) MTKView *mtkView;
 @end
 
-@implementation MMFractalViewController
+@implementation MMCubeViewController
 
 #pragma mark - Init
 
 #pragma mark - Lazy
-- (MMFractalRender *)render {
+- (MMCubeRender *)render {
     if (_render == nil) {
         NSError *error;
-        _render = [[MMFractalRender alloc] initWithMetalView:self.mtkView error:&error];
+        _render = [[MMCubeRender alloc] initWithMetalView:self.mtkView error:&error];
         if (error) {
             NSLog(@"init render error: %@", error);
         }
@@ -48,9 +49,11 @@
 
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
+    
     if (self.render == nil) {
-        NSLog(@"unsupport render");
+        NSLog(@"unsupport render!");
     }
+    
     [self.render createResource];
     [self.render createPipelines];
     

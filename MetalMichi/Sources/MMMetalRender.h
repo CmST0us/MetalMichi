@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, MMMetalRenderErrorCode) {
 // Init Step
 - (void)renderDidInit NS_REQUIRES_SUPER;
 - (void)createResource;
-- (void)createRenderPipelines;
+- (void)createPipelines;
 
 #pragma mark - Subclass Override
 - (void)drawableSizeWillChange:(CGSize)size;

@@ -68,7 +68,7 @@ NSString * const MMMetalRenderErrorDomain = @"MMMetalRenderErrorDomain";
     
 }
 
-- (void)createRenderPipelines {
+- (void)createPipelines {
     
 }
 

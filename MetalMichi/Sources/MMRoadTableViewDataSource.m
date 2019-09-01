@@ -19,7 +19,8 @@
         @{@"渲染一个三角形": @"MMRenderTriangleViewController"},
         @{@"使用片元着色器差值渲染一个彩色三角形": @"MMFragmentColorViewController"},
         @{@"使用向顶点着色器传递变化矩阵": @"MMTransformViewController"},
-        @{@"使用核函数的分型结构": @"MMFractalViewController"}
+        @{@"使用核函数的分型结构": @"MMFractalViewController"},
+        @{@"加载外部立方体模型并旋转": @"MMCubeViewController"},
     ];
     
     return roadClass;

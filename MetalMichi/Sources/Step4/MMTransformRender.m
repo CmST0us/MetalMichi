@@ -30,7 +30,7 @@
     self.transformMatrixBuffer = [self.device newBufferWithBytes:&transform length:transformSize options:MTLResourceOptionCPUCacheModeDefault];
 }
 
-- (void)createRenderPipelines {
+- (void)createPipelines {
     MTLRenderPipelineDescriptor *renderPipelineDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
     
     id<MTLLibrary> library = [self.device newDefaultLibrary];

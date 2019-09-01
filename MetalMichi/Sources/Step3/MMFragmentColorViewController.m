@@ -59,7 +59,7 @@
         NSLog(@"Init render failed");
     }
     [self.render createResource];
-    [self.render createRenderPipelines];
+    [self.render createPipelines];
     
     [self.view addSubview:self.mtkView];
     [self.mtkView mas_makeConstraints:^(MASConstraintMaker *make) {

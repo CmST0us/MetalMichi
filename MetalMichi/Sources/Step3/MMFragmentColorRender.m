@@ -50,7 +50,7 @@
     self.colorVertexBuffer = colorVertexBuffer;
 }
 
-- (void)createRenderPipelines {
+- (void)createPipelines {
     MTLRenderPipelineDescriptor *renderPipelineDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
     
     id<MTLLibrary> library = [self.device newDefaultLibrary];

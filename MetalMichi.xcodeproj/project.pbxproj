@@ -11,6 +11,10 @@
 		4F42A32C231C011400E881AE /* MMFractalRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A32B231C011400E881AE /* MMFractalRender.m */; };
 		4F42A32F231C012900E881AE /* MMFractalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A32E231C012900E881AE /* MMFractalViewController.m */; };
 		4F42A331231C013300E881AE /* fractal.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A330231C013300E881AE /* fractal.metal */; };
+		4F42A335231C193100E881AE /* MMCubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A334231C193100E881AE /* MMCubeViewController.m */; };
+		4F42A338231C194000E881AE /* MMCubeRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A337231C194000E881AE /* MMCubeRender.m */; };
+		4F42A33A231C194A00E881AE /* cube.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A339231C194A00E881AE /* cube.metal */; };
+		4F42A33D231C1C6000E881AE /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4F42A33C231C1C6000E881AE /* cube.obj */; };
 		4F9725B0231823A700272F45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9725AF231823A700272F45 /* AppDelegate.m */; };
 		4F9725BB231823A900272F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F9725BA231823A900272F45 /* Assets.xcassets */; };
 		4F9725BE231823A900272F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9725BC231823A900272F45 /* LaunchScreen.storyboard */; };
@@ -61,6 +65,12 @@
 		4F42A32D231C012900E881AE /* MMFractalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMFractalViewController.h; sourceTree = "<group>"; };
 		4F42A32E231C012900E881AE /* MMFractalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMFractalViewController.m; sourceTree = "<group>"; };
 		4F42A330231C013300E881AE /* fractal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = fractal.metal; sourceTree = "<group>"; };
+		4F42A333231C193100E881AE /* MMCubeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMCubeViewController.h; sourceTree = "<group>"; };
+		4F42A334231C193100E881AE /* MMCubeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMCubeViewController.m; sourceTree = "<group>"; };
+		4F42A336231C194000E881AE /* MMCubeRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMCubeRender.h; sourceTree = "<group>"; };
+		4F42A337231C194000E881AE /* MMCubeRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMCubeRender.m; sourceTree = "<group>"; };
+		4F42A339231C194A00E881AE /* cube.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = cube.metal; sourceTree = "<group>"; };
+		4F42A33C231C1C6000E881AE /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
 		4F9725AB231823A700272F45 /* MetalMichi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalMichi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9725AE231823A700272F45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F9725AF231823A700272F45 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -135,6 +145,26 @@
 			path = Step5;
 			sourceTree = "<group>";
 		};
+		4F42A332231C191300E881AE /* Step6 */ = {
+			isa = PBXGroup;
+			children = (
+				4F42A333231C193100E881AE /* MMCubeViewController.h */,
+				4F42A334231C193100E881AE /* MMCubeViewController.m */,
+				4F42A336231C194000E881AE /* MMCubeRender.h */,
+				4F42A337231C194000E881AE /* MMCubeRender.m */,
+				4F42A339231C194A00E881AE /* cube.metal */,
+			);
+			path = Step6;
+			sourceTree = "<group>";
+		};
+		4F42A33B231C1C4F00E881AE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4F42A33C231C1C6000E881AE /* cube.obj */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		4F9725A2231823A600272F45 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				4F42A2FD231AFA5B00E881AE /* Utils */,
+				4F42A332231C191300E881AE /* Step6 */,
 				4F42A329231C00F100E881AE /* Step5 */,
 				4FDD12F1231ADA9B00147E60 /* Step4 */,
 				4FDD12E7231AC80500147E60 /* Step3 */,
@@ -246,6 +277,7 @@
 		4FFBD2332318302400B3EB0A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4F42A33B231C1C4F00E881AE /* model */,
 				4F9725BA231823A900272F45 /* Assets.xcassets */,
 				4F9725BC231823A900272F45 /* LaunchScreen.storyboard */,
 			);
@@ -310,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F42A33D231C1C6000E881AE /* cube.obj in Resources */,
 				4F9725BE231823A900272F45 /* LaunchScreen.storyboard in Resources */,
 				4F9725BB231823A900272F45 /* Assets.xcassets in Resources */,
 			);
@@ -326,11 +359,14 @@
 				4F42A32C231C011400E881AE /* MMFractalRender.m in Sources */,
 				4F42A300231AFA9100E881AE /* MatricesHelper.m in Sources */,
 				4F9725B0231823A700272F45 /* AppDelegate.m in Sources */,
+				4F42A33A231C194A00E881AE /* cube.metal in Sources */,
+				4F42A335231C193100E881AE /* MMCubeViewController.m in Sources */,
 				4FDD12F7231ADAD200147E60 /* MMTransformRender.m in Sources */,
 				4FDD12E4231AB46800147E60 /* MMMetalRender.m in Sources */,
 				4FDD12E6231AC3DE00147E60 /* render_triangle.metal in Sources */,
 				4F9725C1231823A900272F45 /* main.m in Sources */,
 				4FDD12E1231AB44300147E60 /* MMRenderTriangleRender.m in Sources */,
+				4F42A338231C194000E881AE /* MMCubeRender.m in Sources */,
 				4FFBD22F23182B5700B3EB0A /* MMStepViewController.m in Sources */,
 				4F42A32F231C012900E881AE /* MMFractalViewController.m in Sources */,
 				4F42A331231C013300E881AE /* fractal.metal in Sources */,

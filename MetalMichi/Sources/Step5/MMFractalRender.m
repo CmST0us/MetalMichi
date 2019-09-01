@@ -34,7 +34,7 @@
     self.timerBuffer = [self.device newBufferWithBytes:&_timer length:sizeof(float) options:MTLResourceOptionCPUCacheModeDefault];
 }
 
-- (void)createRenderPipelines {
+- (void)createPipelines {
     id<MTLLibrary> library = [self.device newDefaultLibrary];
     
     id<MTLFunction> kernel = [library newFunctionWithName:@"fractal_kernel_function"];
