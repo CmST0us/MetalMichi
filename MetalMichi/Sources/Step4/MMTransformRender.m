@@ -21,10 +21,10 @@
 - (void)createResource {
     [super createResource];
     
-    simd_float4x4 transform = [MatricesHelper make3DTransformMatrix];
-    transform = [MatricesHelper rotation:transform toAngle:simd_make_float3(0.2, 0, 0)];
-    transform = [MatricesHelper translation:transform toPosition:simd_make_float3(0, 0.4, 0)];
-    transform = [MatricesHelper scale:transform toValue:simd_make_float3(0.5, 0.5, 1)];
+    matrix_float4x4 transform = [MatricesHelper make3DTransformMatrix];
+    transform = [MatricesHelper scale:transform value:simd_make_float3(0.5, 0.5, 1)];
+    transform = [MatricesHelper rotation:transform axis:simd_make_float3(0.0, 0.0, 1.0) angle:M_PI / 2];
+    transform = [MatricesHelper translation:transform offset:simd_make_float3(0, 0.4, 0)];
     
     NSUInteger transformSize = sizeof(transform);
     self.transformMatrixBuffer = [self.device newBufferWithBytes:&transform length:transformSize options:MTLResourceOptionCPUCacheModeDefault];

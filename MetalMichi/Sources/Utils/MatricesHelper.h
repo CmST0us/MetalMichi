@@ -12,16 +12,18 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MatricesHelper : NSObject
-+ (simd_float4x4)make3DTransformMatrix;
++ (matrix_float4x4)make3DTransformMatrix;
 
-+ (simd_float4x4)translation:(simd_float4x4)matrix
-                  toPosition:(simd_float3)position;
++ (matrix_float4x4)translation:(matrix_float4x4)matrix
+                        offset:(vector_float3)position;
+/// 缩放需要早于旋转
++ (matrix_float4x4)scale:(matrix_float4x4)matrix
+                   value:(vector_float3)scale;
 
-+ (simd_float4x4)scale:(simd_float4x4)matrix
-               toValue:(simd_float3)scale;
++ (matrix_float4x4)rotation:(matrix_float4x4)matrix
+                       axis:(vector_float3)axis
+                      angle:(float)radians;
 
-+ (simd_float4x4)rotation:(simd_float4x4)matrix
-                  toAngle:(simd_float3)angle;
 @end
 
 NS_ASSUME_NONNULL_END
