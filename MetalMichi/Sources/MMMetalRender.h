@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, MMMetalRenderErrorCode) {
                             error:(NSError * _Nullable *)error;
 
 // Init Step
+- (void)renderDidInit NS_REQUIRES_SUPER;
 - (void)createResource;
 - (void)createRenderPipelines;
 

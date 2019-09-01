@@ -47,6 +47,7 @@ NSString * const MMMetalRenderErrorDomain = @"MMMetalRenderErrorDomain";
         _renderView.device = _device;
         _delegate = delegate;
         _renderView.delegate = self;
+        [self renderDidInit];
     }
     return self;
 }
@@ -59,6 +60,18 @@ NSString * const MMMetalRenderErrorDomain = @"MMMetalRenderErrorDomain";
 }
 
 #pragma mark - Subclass Override
+- (void)renderDidInit {
+    
+}
+
+- (void)createResource {
+    
+}
+
+- (void)createRenderPipelines {
+    
+}
+
 - (void)drawableSizeWillChange:(CGSize)size {
     
 }

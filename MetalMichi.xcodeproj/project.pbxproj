@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4F42A300231AFA9100E881AE /* MatricesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A2FF231AFA9100E881AE /* MatricesHelper.m */; };
+		4F42A32C231C011400E881AE /* MMFractalRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A32B231C011400E881AE /* MMFractalRender.m */; };
+		4F42A32F231C012900E881AE /* MMFractalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A32E231C012900E881AE /* MMFractalViewController.m */; };
+		4F42A331231C013300E881AE /* fractal.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A330231C013300E881AE /* fractal.metal */; };
 		4F9725B0231823A700272F45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9725AF231823A700272F45 /* AppDelegate.m */; };
 		4F9725BB231823A900272F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F9725BA231823A900272F45 /* Assets.xcassets */; };
 		4F9725BE231823A900272F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9725BC231823A900272F45 /* LaunchScreen.storyboard */; };
@@ -53,6 +56,11 @@
 /* Begin PBXFileReference section */
 		4F42A2FE231AFA9100E881AE /* MatricesHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatricesHelper.h; sourceTree = "<group>"; };
 		4F42A2FF231AFA9100E881AE /* MatricesHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatricesHelper.m; sourceTree = "<group>"; };
+		4F42A32A231C011400E881AE /* MMFractalRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMFractalRender.h; sourceTree = "<group>"; };
+		4F42A32B231C011400E881AE /* MMFractalRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMFractalRender.m; sourceTree = "<group>"; };
+		4F42A32D231C012900E881AE /* MMFractalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMFractalViewController.h; sourceTree = "<group>"; };
+		4F42A32E231C012900E881AE /* MMFractalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMFractalViewController.m; sourceTree = "<group>"; };
+		4F42A330231C013300E881AE /* fractal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = fractal.metal; sourceTree = "<group>"; };
 		4F9725AB231823A700272F45 /* MetalMichi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalMichi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9725AE231823A700272F45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F9725AF231823A700272F45 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,6 +123,18 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4F42A329231C00F100E881AE /* Step5 */ = {
+			isa = PBXGroup;
+			children = (
+				4F42A32A231C011400E881AE /* MMFractalRender.h */,
+				4F42A32B231C011400E881AE /* MMFractalRender.m */,
+				4F42A32D231C012900E881AE /* MMFractalViewController.h */,
+				4F42A32E231C012900E881AE /* MMFractalViewController.m */,
+				4F42A330231C013300E881AE /* fractal.metal */,
+			);
+			path = Step5;
+			sourceTree = "<group>";
+		};
 		4F9725A2231823A600272F45 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				4F42A2FD231AFA5B00E881AE /* Utils */,
+				4F42A329231C00F100E881AE /* Step5 */,
 				4FDD12F1231ADA9B00147E60 /* Step4 */,
 				4FDD12E7231AC80500147E60 /* Step3 */,
 				4FDD12DB231AB3BD00147E60 /* Step2 */,
@@ -302,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FFBD22C23182A5800B3EB0A /* MMRoadTableViewDataSource.m in Sources */,
+				4F42A32C231C011400E881AE /* MMFractalRender.m in Sources */,
 				4F42A300231AFA9100E881AE /* MatricesHelper.m in Sources */,
 				4F9725B0231823A700272F45 /* AppDelegate.m in Sources */,
 				4FDD12F7231ADAD200147E60 /* MMTransformRender.m in Sources */,
@@ -310,6 +332,8 @@
 				4F9725C1231823A900272F45 /* main.m in Sources */,
 				4FDD12E1231AB44300147E60 /* MMRenderTriangleRender.m in Sources */,
 				4FFBD22F23182B5700B3EB0A /* MMStepViewController.m in Sources */,
+				4F42A32F231C012900E881AE /* MMFractalViewController.m in Sources */,
+				4F42A331231C013300E881AE /* fractal.metal in Sources */,
 				4FDD12DE231AB3F700147E60 /* MMRenderTriangleViewController.m in Sources */,
 				4FDD12EA231AC87600147E60 /* MMFragmentColorRender.m in Sources */,
 				4FFBD23223182D5D00B3EB0A /* MMMetalFirstStepViewController.m in Sources */,
