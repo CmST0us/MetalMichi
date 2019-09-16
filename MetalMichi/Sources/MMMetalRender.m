@@ -52,6 +52,12 @@ NSString * const MMMetalRenderErrorDomain = @"MMMetalRenderErrorDomain";
     return self;
 }
 
+- (nullable instancetype)initWithMetalDevice:(id<MTLDevice>)device
+                                    delegate:(nullable id<MTKViewDelegate>)delegate
+                                       error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    return [self initWithMetalView:nil device:device delegate:delegate error:error];
+}
+
 - (id<MTLCommandQueue>)commandQueue {
     if (_commandQueue == nil) {
         _commandQueue = [self.device newCommandQueue];

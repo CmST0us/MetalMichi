@@ -15,6 +15,7 @@
 		4F42A338231C194000E881AE /* MMCubeRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A337231C194000E881AE /* MMCubeRender.m */; };
 		4F42A33A231C194A00E881AE /* cube.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A339231C194A00E881AE /* cube.metal */; };
 		4F42A33D231C1C6000E881AE /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4F42A33C231C1C6000E881AE /* cube.obj */; };
+		4F4C432B232B3CAC00583A38 /* MMColorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C432A232B3CAC00583A38 /* MMColorConverter.m */; };
 		4F9725B0231823A700272F45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9725AF231823A700272F45 /* AppDelegate.m */; };
 		4F9725BB231823A900272F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F9725BA231823A900272F45 /* Assets.xcassets */; };
 		4F9725BE231823A900272F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9725BC231823A900272F45 /* LaunchScreen.storyboard */; };
@@ -71,6 +72,9 @@
 		4F42A337231C194000E881AE /* MMCubeRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMCubeRender.m; sourceTree = "<group>"; };
 		4F42A339231C194A00E881AE /* cube.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = cube.metal; sourceTree = "<group>"; };
 		4F42A33C231C1C6000E881AE /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
+		4F4C4329232B3CAC00583A38 /* MMColorConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMColorConverter.h; sourceTree = "<group>"; };
+		4F4C432A232B3CAC00583A38 /* MMColorConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMColorConverter.m; sourceTree = "<group>"; };
+		4F697AE0232B402D00244538 /* MMColorConverterUniform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMColorConverterUniform.h; path = ../../../../../MavPPM/MMColorConverterUniform.h; sourceTree = "<group>"; };
 		4F9725AB231823A700272F45 /* MetalMichi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalMichi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9725AE231823A700272F45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F9725AF231823A700272F45 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				4F42A2FD231AFA5B00E881AE /* Utils */,
+				4FC2B45F232B3A4700FD7D02 /* MetalColorConvert */,
 				4F42A332231C191300E881AE /* Step6 */,
 				4F42A329231C00F100E881AE /* Step5 */,
 				4FDD12F1231ADA9B00147E60 /* Step4 */,
@@ -234,6 +239,16 @@
 				4FFBD23123182D5D00B3EB0A /* MMMetalFirstStepViewController.m */,
 			);
 			path = Step1;
+			sourceTree = "<group>";
+		};
+		4FC2B45F232B3A4700FD7D02 /* MetalColorConvert */ = {
+			isa = PBXGroup;
+			children = (
+				4F4C4329232B3CAC00583A38 /* MMColorConverter.h */,
+				4F4C432A232B3CAC00583A38 /* MMColorConverter.m */,
+				4F697AE0232B402D00244538 /* MMColorConverterUniform.h */,
+			);
+			path = MetalColorConvert;
 			sourceTree = "<group>";
 		};
 		4FDD12DB231AB3BD00147E60 /* Step2 */ = {
@@ -377,6 +392,7 @@
 				4FDD12FB231AE94700147E60 /* transform.metal in Sources */,
 				4FDD12F0231ACCB400147E60 /* color_fragment.metal in Sources */,
 				4FFBD22923182A1400B3EB0A /* MMRoadTableViewController.m in Sources */,
+				4F4C432B232B3CAC00583A38 /* MMColorConverter.m in Sources */,
 				4FDD12F4231ADABB00147E60 /* MMTransformViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
