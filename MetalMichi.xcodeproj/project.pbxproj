@@ -25,6 +25,10 @@
 		4F9725CE231825CF00272F45 /* Masonry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9725C9231825CF00272F45 /* Masonry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F9725CF231825CF00272F45 /* NSObjectSignals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9725CA231825CF00272F45 /* NSObjectSignals.framework */; };
 		4F9725D0231825CF00272F45 /* NSObjectSignals.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9725CA231825CF00272F45 /* NSObjectSignals.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4FB62C4023955A3200D15398 /* EKMetalRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB62C3823955A3100D15398 /* EKMetalRender.m */; };
+		4FB62C4123955A3200D15398 /* EKMetalCompute.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB62C3923955A3100D15398 /* EKMetalCompute.m */; };
+		4FB62C4223955A3200D15398 /* EKMetalContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB62C3A23955A3100D15398 /* EKMetalContext.m */; };
+		4FB62C4323955A3200D15398 /* NSError+EKMetalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB62C3C23955A3200D15398 /* NSError+EKMetalKit.m */; };
 		4FDD12DE231AB3F700147E60 /* MMRenderTriangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12DD231AB3F700147E60 /* MMRenderTriangleViewController.m */; };
 		4FDD12E1231AB44300147E60 /* MMRenderTriangleRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12E0231AB44300147E60 /* MMRenderTriangleRender.m */; };
 		4FDD12E4231AB46800147E60 /* MMMetalRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD12E3231AB46800147E60 /* MMMetalRender.m */; };
@@ -81,6 +85,14 @@
 		4F9725C8231825CF00272F45 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9725C9231825CF00272F45 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9725CA231825CF00272F45 /* NSObjectSignals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NSObjectSignals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FB62C3823955A3100D15398 /* EKMetalRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKMetalRender.m; sourceTree = "<group>"; };
+		4FB62C3923955A3100D15398 /* EKMetalCompute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKMetalCompute.m; sourceTree = "<group>"; };
+		4FB62C3A23955A3100D15398 /* EKMetalContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKMetalContext.m; sourceTree = "<group>"; };
+		4FB62C3B23955A3200D15398 /* EKMetalCompute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKMetalCompute.h; sourceTree = "<group>"; };
+		4FB62C3C23955A3200D15398 /* NSError+EKMetalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+EKMetalKit.m"; sourceTree = "<group>"; };
+		4FB62C3D23955A3200D15398 /* EKMetalRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKMetalRender.h; sourceTree = "<group>"; };
+		4FB62C3E23955A3200D15398 /* NSError+EKMetalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+EKMetalKit.h"; sourceTree = "<group>"; };
+		4FB62C3F23955A3200D15398 /* EKMetalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKMetalContext.h; sourceTree = "<group>"; };
 		4FDD12DC231AB3F700147E60 /* MMRenderTriangleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMRenderTriangleViewController.h; sourceTree = "<group>"; };
 		4FDD12DD231AB3F700147E60 /* MMRenderTriangleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMRenderTriangleViewController.m; sourceTree = "<group>"; };
 		4FDD12DF231AB44300147E60 /* MMRenderTriangleRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMRenderTriangleRender.h; sourceTree = "<group>"; };
@@ -208,6 +220,7 @@
 		4F9725D3231825EA00272F45 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4FB62C362395597700D15398 /* Metal */,
 				4F42A2FD231AFA5B00E881AE /* Utils */,
 				4F42A332231C191300E881AE /* Step6 */,
 				4F42A329231C00F100E881AE /* Step5 */,
@@ -234,6 +247,29 @@
 				4FFBD23123182D5D00B3EB0A /* MMMetalFirstStepViewController.m */,
 			);
 			path = Step1;
+			sourceTree = "<group>";
+		};
+		4FB62C362395597700D15398 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				4FB62C3723955A1C00D15398 /* Base */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		4FB62C3723955A1C00D15398 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4FB62C3B23955A3200D15398 /* EKMetalCompute.h */,
+				4FB62C3923955A3100D15398 /* EKMetalCompute.m */,
+				4FB62C3F23955A3200D15398 /* EKMetalContext.h */,
+				4FB62C3A23955A3100D15398 /* EKMetalContext.m */,
+				4FB62C3D23955A3200D15398 /* EKMetalRender.h */,
+				4FB62C3823955A3100D15398 /* EKMetalRender.m */,
+				4FB62C3E23955A3200D15398 /* NSError+EKMetalKit.h */,
+				4FB62C3C23955A3200D15398 /* NSError+EKMetalKit.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		4FDD12DB231AB3BD00147E60 /* Step2 */ = {
@@ -356,9 +392,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FFBD22C23182A5800B3EB0A /* MMRoadTableViewDataSource.m in Sources */,
+				4FB62C4323955A3200D15398 /* NSError+EKMetalKit.m in Sources */,
 				4F42A32C231C011400E881AE /* MMFractalRender.m in Sources */,
 				4F42A300231AFA9100E881AE /* MatricesHelper.m in Sources */,
+				4FB62C4223955A3200D15398 /* EKMetalContext.m in Sources */,
 				4F9725B0231823A700272F45 /* AppDelegate.m in Sources */,
+				4FB62C4123955A3200D15398 /* EKMetalCompute.m in Sources */,
 				4F42A33A231C194A00E881AE /* cube.metal in Sources */,
 				4F42A335231C193100E881AE /* MMCubeViewController.m in Sources */,
 				4FDD12F7231ADAD200147E60 /* MMTransformRender.m in Sources */,
@@ -376,6 +415,7 @@
 				4FDD12ED231AC88F00147E60 /* MMFragmentColorViewController.m in Sources */,
 				4FDD12FB231AE94700147E60 /* transform.metal in Sources */,
 				4FDD12F0231ACCB400147E60 /* color_fragment.metal in Sources */,
+				4FB62C4023955A3200D15398 /* EKMetalRender.m in Sources */,
 				4FFBD22923182A1400B3EB0A /* MMRoadTableViewController.m in Sources */,
 				4FDD12F4231ADABB00147E60 /* MMTransformViewController.m in Sources */,
 			);
